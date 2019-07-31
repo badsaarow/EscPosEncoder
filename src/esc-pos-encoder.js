@@ -358,8 +358,7 @@ class EscPosEncoder {
         /* Force printing the print buffer and moving to a new line */
 
         this._queue([
-            0x0a,
-        ]);
+            0x0a, 0x0d ]);
 
         /* Model */
 
@@ -431,7 +430,7 @@ class EscPosEncoder {
         /* Print QR code */
 
         this._queue([
-            0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x51, 0x30,
+            0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x51, 0x30, 0x00, 0x00, 0x0a
         ]);
 
         return this;
