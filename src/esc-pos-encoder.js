@@ -512,15 +512,15 @@ class EscPosEncoder {
     }
 
     /* Data */
-    let bytes = iconv.encode(value, "iso88591");
+    let bytes = iconv.encode(value, this._codepage);
     let length = bytes.length + 3;
 
     this._queue([
       0x1d,
       0x28,
       0x6b,
-      length % 0xff,
-      parseInt(length / 0xff),
+      length % 0x100,
+      parseInt(length / 0x100),
       0x31,
       0x50,
       0x30,
