@@ -9,7 +9,9 @@
     "build": "npm run bundle && npm run uglify",
     "lint": "eslint --fix src/esc-pos-encoder.js",
     "mocha": "mocha test/",
-    "test": "npm run lint && npm run mocha"
+    "test": "npm run lint && npm run mocha",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,15 +31,17 @@
   "homepage": "https://github.com/NielsLeenheer/EscPosEncoder#readme",
   "devDependencies": {
     "browserify": "^14.5.0",
-    "eslint": "^4.11.0",
+    "eslint": "^7.0.0",
     "eslint-config-google": "^0.9.1",
     "uglify-es": "^3.1.10",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "mocha": "^6.2.3"
   },
   "dependencies": {
     "buffer-to-uint8array": "^1.1.0",
     "iconv-lite": "^0.6.2",
-    "linewrap": "^0.2.1"
-  }
+    "linewrap": "^0.2.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
